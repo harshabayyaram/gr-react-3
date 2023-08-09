@@ -1,37 +1,29 @@
 import React from "react";
 import "../../src/style.css";
-import profile from "../images/profile.jpg";
 import location from "../images/location-dot-solid.svg";
-import online from "../images/online.svg"
+import online from "../images/status.svg";
 
-
-function CardData(props){
-    
-}
-
-function Card() {
+function Card(props) {
   return (
     <div className="t-card">
       <div className="top">
         <div className="img">
-          <img src={profile} />
+          <img src={props.profile} />
         </div>
-        <h3 className="design">Film Director, Producer</h3>
-        <h5 className="fee">$14/hour</h5>
+        <h3 className="design">{props.designation}</h3>
+        <h5 className="fee">{props.fee}</h5>
       </div>
       <div className="bottom">
-        <h4 className="name">Jeffrey Abrams,51</h4>
+        <h4 className="name">{props.name}</h4>
 
         <h6>
-          <span  className="loc">
+          <span className="loc">
             <img src={location} />
           </span>
-          New York, United States
+          {props.location}
         </h6>
 
-        <h7 className="bio">
-          Abrams was born in newyork city and raised in los angeles
-        </h7>
+        <h7 className="bio">{props.bio}</h7>
         <br />
         <div className="btn">
           <button className="cv">VIEW CV</button>
@@ -39,10 +31,16 @@ function Card() {
         <div className="btn">
           <button className="offer">MAKE OFFER</button>
         </div>
-        <div className="status"><span><img src= {online}/></span> Online</div>
+        <div className="status">
+          <span>
+            <img src={online} />
+          </span>
+          {props.status}
+        </div>
       </div>
     </div>
   );
 }
+
 
 export default Card;
